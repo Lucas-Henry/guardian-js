@@ -1,0 +1,25 @@
+node_modules
+# !node_modules/whatsapp-web.js
+.wwebjs_auth/*
+public/*
+dist
+!public/.gitkeep
+.env
+.env.test
+
+logs
+package-lock.json
+yarn.lock
+yarn-error.log
+
+/src/config/sentry.js
+backend/.htaccess
+backend/.well-known/
+
+# Ignore test-related files
+/coverage.data
+/coverage/
+src/authFiles/auth_info_multi.json
+
+# Sentry Config File
+.sentryclirc
