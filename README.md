@@ -1,4 +1,13 @@
-# guardian-js
+<table border="0">
+  <tr>
+    <td>
+      <img width="80" height="80" alt="guardian-ico2" src="https://github.com/user-attachments/assets/81399011-0b1c-47a3-a827-801ce939dc38" />
+    </td>
+    <td>
+      <h1>guardian-js</h1>
+    </td>
+  </tr>
+</table>
 
 > Privacy-first, stateless toolkit for age verification and content classification — built for compliance with Brazil's Digital ECA (Law 15,211/2025) and beyond.
 
