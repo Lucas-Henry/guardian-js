@@ -63,7 +63,7 @@ guardian-js is a software library provided as-is under the Apache 2.0 license. I
 
 ## Documentation
 
-- [pt-BR — Documentação em Português](README.pt-BR.md)
+- [pt-BR — Documentação em Português](LEIAME.md)
 - [Project Scope](SCOPE.md)
 - [Contributing](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
