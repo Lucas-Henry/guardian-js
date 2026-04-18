@@ -1,0 +1,39 @@
+{
+  "name": "guardian-js",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Privacy-first, stateless toolkit for age verification and content classification",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucas-Henry/guardian-js"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.0",
+    "ts-node": "^10.9.2",
+    "turbo": "^2.9.6",
+    "typescript": "^5.7.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
