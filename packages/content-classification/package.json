@@ -1,0 +1,23 @@
+{
+  "name": "@guardian-js/content-classification",
+  "version": "0.0.1",
+  "description": "Content risk classification with pluggable backend adapters",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@guardian-js/core": "workspace:*",
+    "zod": "^3.24.0"
+  }
+}
