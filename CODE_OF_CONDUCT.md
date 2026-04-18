@@ -17,7 +17,7 @@ The following behaviors are unacceptable and may lead to removal from the projec
 
 - Harassment, abusive language, or threats.
 - Derogatory comments about a person's race, gender, sexual orientation, religion, disability, or any protected characteristic.
-- Publishing private information (doxing) or sharing content that invades someones privacy.
+- Publishing private information (doxing) or sharing content that invades someone's privacy.
 - Repeatedly posting off-topic or disruptive messages after being asked to stop.
 
 ## Reporting
