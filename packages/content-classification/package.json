@@ -1,6 +1,6 @@
 {
   "name": "@guardian-js/content-classification",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Content risk classification with pluggable backend adapters",
   "license": "Apache-2.0",
   "main": "./dist/index.js",
