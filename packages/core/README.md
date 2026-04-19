@@ -1,4 +1,13 @@
-# @guardian-js/core
+<table border="0">
+  <tr>
+    <td>
+      <img width="80" height="80" alt="guardian-js" src="https://github.com/user-attachments/assets/81399011-0b1c-47a3-a827-801ce939dc38" />
+    </td>
+    <td>
+      <h1>@guardian-js/core</h1>
+    </td>
+  </tr>
+</table>
 
 Shared types, result schemas, and utilities for the guardian-js toolkit.
 
