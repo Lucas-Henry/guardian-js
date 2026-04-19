@@ -8,13 +8,35 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucas-Henry/guardian-js",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/Lucas-Henry/guardian-js#readme",
+  "bugs": {
+    "url": "https://github.com/Lucas-Henry/guardian-js/issues"
+  },
+  "keywords": [
+    "age-verification",
+    "content-classification",
+    "eca-digital",
+    "lgpd",
+    "compliance",
+    "typescript",
+    "privacy"
+  ],
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist coverage *.tsbuildinfo"
+    "clean": "rm -rf dist coverage *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
     "@types/jest": "^29.5.13",
