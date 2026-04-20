@@ -1,0 +1,46 @@
+{
+  "name": "@guardian-js/identity-verification",
+  "version": "0.0.4",
+  "description": "Standardized identity verification flows with pluggable provider adapters",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lucas-Henry/guardian-js",
+    "directory": "packages/identity-verification"
+  },
+  "homepage": "https://github.com/Lucas-Henry/guardian-js#readme",
+  "bugs": {
+    "url": "https://github.com/Lucas-Henry/guardian-js/issues"
+  },
+  "keywords": [
+    "identity-verification",
+    "gov-br",
+    "eca-digital",
+    "lgpd",
+    "compliance",
+    "typescript",
+    "privacy"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist coverage *.tsbuildinfo",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@guardian-js/core": "workspace:*",
+    "jose": "^6.2.2",
+    "zod": "^3.24.0"
+  }
+}
