@@ -1,0 +1,5 @@
+src/
+*.tsbuildinfo
+jest.config.ts
+tsconfig.json
+coverage/
