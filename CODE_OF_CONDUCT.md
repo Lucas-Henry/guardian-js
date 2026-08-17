@@ -4,7 +4,7 @@ This project follows a Code of Conduct to foster a welcoming, respectful, and pr
 
 ## Our standards
 
-We ask everyone participating in this project — including maintainers, contributors, and community members — to:
+We ask everyone participating in this project, including maintainers, contributors, and community members, to:
 
 - Be respectful and considerate in all communications.
 - Focus on constructive feedback and technical discussion.
@@ -22,7 +22,7 @@ The following behaviors are unacceptable and may lead to removal from the projec
 
 ## Reporting
 
-If you experience or witness unacceptable behavior, please report it to the maintainers as soon as possible. For sensitive or security-related reports, do not open a public issue — instead send an email to: henrylucas347@gmail.com
+If you experience or witness unacceptable behavior, please report it to the maintainers as soon as possible. For sensitive or security-related reports, do not open a public issue, instead send an email to: henrylucas347@gmail.com
 
 When reporting, include:
 

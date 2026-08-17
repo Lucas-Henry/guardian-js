@@ -28,7 +28,7 @@ import type { Result, AgeVerificationProvider, ContentClassificationProvider } f
 
 ## Part of guardian-js
 
-This package is part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) monorepo — a privacy-first, stateless toolkit for age verification and content classification, built for compliance with Brazil's ECA Digital (Law 15,211/2025).
+This package is part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) monorepo, a privacy-first, stateless toolkit for age verification and content classification, built for compliance with Brazil's ECA Digital (Law 15,211/2025).
 
 ## License
 

@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-Standardized age verification flows with pluggable provider adapters — part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) toolkit.
+Standardized age verification flows with pluggable provider adapters, part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) toolkit.
 
 ## Installation
 
@@ -25,7 +25,7 @@ import { MyProviderAdapter } from './adapters/MyProviderAdapter';
 
 const service = new AgeVerificationService(new MyProviderAdapter());
 
-// Step 1 — initiate verification
+// Step 1, initiate verification
 const initResult = await service.initiateVerification({
   redirectUri: 'https://myplatform.com/auth/callback',
   locale: 'pt-BR',
@@ -38,7 +38,7 @@ if (!initResult.success) {
 
 redirect(initResult.data.redirectUrl);
 
-// Step 2 — handle the callback
+// Step 2, handle the callback
 const callbackResult = await service.handleCallback({
   providerPayload: req.body
 });

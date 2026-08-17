@@ -32,20 +32,20 @@ Open a Discussion under the Ideas category before opening a pull request for new
 2. Follow the code style enforced by the project's ESLint and Prettier configuration.
 3. Write or update tests for all changed behavior.
 4. Update documentation if your change affects the public API.
-5. Keep pull requests focused — one concern per PR.
+5. Keep pull requests focused, one concern per PR.
 6. Fill out the pull request template completely.
 
 ---
 
 ## Code standards
 
-**TypeScript** — strict mode is enabled. No use of `any` without explicit justification in a comment.
+**TypeScript**, strict mode is enabled. No use of `any` without explicit justification in a comment.
 
-**Comments** — only when strictly necessary. Comments explain why, not what. All comments in English.
+**Comments**, only when strictly necessary. Comments explain why, not what. All comments in English.
 
-**Tests** — all public API surface must have unit tests. Adapters must have integration tests with mocked external services.
+**Tests**, all public API surface must have unit tests. Adapters must have integration tests with mocked external services.
 
-**No side effects** — functions must not produce side effects outside their return value. No global state mutations, no implicit I/O.
+**No side effects**, functions must not produce side effects outside their return value. No global state mutations, no implicit I/O.
 
 ---
 

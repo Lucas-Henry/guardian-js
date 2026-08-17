@@ -9,7 +9,7 @@
   </tr>
 </table>
 
-Content risk classification with pluggable backend adapters — part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) toolkit.
+Content risk classification with pluggable backend adapters, part of the [guardian-js](https://github.com/Lucas-Henry/guardian-js) toolkit.
 
 ## Installation
 
@@ -42,7 +42,7 @@ if (textResult.success) {
   const { riskLevel, categories, confidence } = textResult.data;
   // riskLevel: 'safe' | 'low' | 'medium' | 'high' | 'blocked'
   // categories: Array<'adult_content' | 'violence' | 'hate_speech' | 'gambling' | 'drugs' | 'self_harm' | 'safe'>
-  // confidence: number (0–1)
+  // confidence: number (0 to 1)
 }
 ```
 
