@@ -1,4 +1,4 @@
-# Project Scope — guardian-js
+# Project Scope, guardian-js
 
 This document defines the boundaries of guardian-js. It exists to prevent scope creep, guide contribution decisions, and set clear expectations for integrators.
 
@@ -14,7 +14,7 @@ Providing a standardized interface for integrating with external age verificatio
 - Built-in adapters for publicly available identity verification services
 - Result types that encode verification outcome, age group classification, and the method used
 - Flow utilities that help platforms implement compliant redirect/callback patterns without exposing sensitive data to the library itself
-- Age group classification aligned with ECA Digital categories: `child` (under 12), `adolescent` (12–17), `adult` (18+)
+- Age group classification aligned with ECA Digital categories: `child` (under 12), `adolescent` (12 to 17), `adult` (18+)
 
 ### Content classification
 
@@ -38,17 +38,17 @@ Providing a standardized interface for classifying content as appropriate or ina
 
 The following will never be part of guardian-js, regardless of demand:
 
-**Data storage** — the library does not persist any data. It has no database dependency and no concept of a user session or verification history.
+**Data storage**, the library does not persist any data. It has no database dependency and no concept of a user session or verification history.
 
-**Identity data handling** — sensitive identity data (documents, biometric data, CPF, government IDs) must never pass through guardian-js. Adapters are designed so that data flows directly between the user's client and the identity provider.
+**Identity data handling**, sensitive identity data (documents, biometric data, CPF, government IDs) must never pass through guardian-js. Adapters are designed so that data flows directly between the user's client and the identity provider.
 
-**Government reporting** — guardian-js does not implement any interface for reporting to ANPD, law enforcement, or any other authority. Platforms that have reporting obligations must implement those separately.
+**Government reporting**, guardian-js does not implement any interface for reporting to ANPD, law enforcement, or any other authority. Platforms that have reporting obligations must implement those separately.
 
-**Final access control decisions** — the library returns structured results with a recommendation. The decision to grant or deny access is always made by the platform, never by guardian-js.
+**Final access control decisions**, the library returns structured results with a recommendation. The decision to grant or deny access is always made by the platform, never by guardian-js.
 
-**Facial recognition and biometric analysis** — image-based age estimation is explicitly excluded. The ANPD guidelines note that biometric methods require robust justification and should only be used when less invasive alternatives are insufficient. This library does not provide that capability.
+**Facial recognition and biometric analysis**, image-based age estimation is explicitly excluded. The ANPD guidelines note that biometric methods require robust justification and should only be used when less invasive alternatives are insufficient. This library does not provide that capability.
 
-**Legal compliance certification** — using guardian-js does not certify or guarantee compliance with ECA Digital, LGPD, GDPR, or any other regulation.
+**Legal compliance certification**, using guardian-js does not certify or guarantee compliance with ECA Digital, LGPD, GDPR, or any other regulation.
 
 ---
 
@@ -56,13 +56,13 @@ The following will never be part of guardian-js, regardless of demand:
 
 These constraints apply to all contributions:
 
-**Stateless** — no module in guardian-js may maintain state between calls. Every function must be a pure transformation of its inputs.
+**Stateless**, no module in guardian-js may maintain state between calls. Every function must be a pure transformation of its inputs.
 
-**No implicit logging** — no module may log data that could identify a user. Debug logging, if implemented, must be opt-in and must never include personal data.
+**No implicit logging**, no module may log data that could identify a user. Debug logging, if implemented, must be opt-in and must never include personal data.
 
-**Adapter isolation** — external service calls must always go through the adapter interface. No module may call an external service directly.
+**Adapter isolation**, external service calls must always go through the adapter interface. No module may call an external service directly.
 
-**Explicit over implicit** — configuration must be explicit. No environment variable reading, no auto-detection of providers.
+**Explicit over implicit**, configuration must be explicit. No environment variable reading, no auto-detection of providers.
 
 ---
 

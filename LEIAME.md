@@ -9,10 +9,10 @@
   </tr>
 </table>
 
-> Toolkit stateless e privacy-first para verificação de idade e classificação de conteúdo — construído para conformidade com o ECA Digital brasileiro (Lei 15.211/2025) e além.
+> Toolkit stateless e privacy-first para verificação de idade e classificação de conteúdo, construído para conformidade com o ECA Digital brasileiro (Lei 15.211/2025) e além.
 
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-Apache%202.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pr%C3%A9--alpha-orange.svg)]()
+[![Status](https://img.shields.io/badge/status-pr%C3%A9.alpha-orange.svg)]()
 [![Linguagem](https://img.shields.io/badge/lang-TypeScript-blue.svg)]()
 
 ---
@@ -21,7 +21,7 @@
 
 O **guardian-js** é um toolkit TypeScript open source que ajuda plataformas digitais a implementar verificação de idade e classificação de conteúdo de forma padronizada e com preservação de privacidade.
 
-**Não é** um serviço de armazenamento de dados. **Não é** um sistema de reporte para órgãos governamentais. É uma biblioteca composável que fornece a infraestrutura de integração — sua plataforma é dona das decisões e das obrigações de conformidade.
+**Não é** um serviço de armazenamento de dados. **Não é** um sistema de reporte para órgãos governamentais. É uma biblioteca composável que fornece a infraestrutura de integração, sua plataforma é dona das decisões e das obrigações de conformidade.
 
 A biblioteca foi criada em resposta direta ao **ECA Digital (Lei 15.211/2025)**, a primeira lei da América Latina a impor requisitos aplicáveis de verificação de idade a plataformas digitais, em vigor desde **17 de março de 2026**. O design é intencionalmente agnóstico em relação à jurisdição e pode ser adaptado para o DSA europeu, o UK Age Appropriate Design Code, e frameworks similares.
 
@@ -29,13 +29,13 @@ A biblioteca foi criada em resposta direta ao **ECA Digital (Lei 15.211/2025)**,
 
 ## Princípios fundamentais
 
-**Stateless por design** — o guardian-js processa entradas e retorna saídas. Nunca armazena dados pessoais, nunca registra identificadores de usuários e nunca se comunica com serviços externos por conta própria sem configuração explícita.
+**Stateless por design**, o guardian-js processa entradas e retorna saídas. Nunca armazena dados pessoais, nunca registra identificadores de usuários e nunca se comunica com serviços externos por conta própria sem configuração explícita.
 
-**Você é o dono da conformidade** — a biblioteca retorna resultados estruturados. O que sua plataforma faz com esses resultados — bloquear acesso, iniciar um fluxo de consentimento parental, registrar para auditoria — é inteiramente sua responsabilidade. O guardian-js é uma ferramenta, não um serviço de compliance.
+**Você é o dono da conformidade**, a biblioteca retorna resultados estruturados. O que sua plataforma faz com esses resultados, bloquear acesso, iniciar um fluxo de consentimento parental, registrar para auditoria, é inteiramente sua responsabilidade. O guardian-js é uma ferramenta, não um serviço de compliance.
 
-**Baseado em adapters** — cada dependência externa (provedores de identidade, APIs de moderação de conteúdo, runtimes de ML) fica atrás de uma interface de adapter. Você escolhe seus provedores e pode trocá-los sem alterar o código de integração.
+**Baseado em adapters**, cada dependência externa (provedores de identidade, APIs de moderação de conteúdo, runtimes de ML) fica atrás de uma interface de adapter. Você escolhe seus provedores e pode trocá-los sem alterar o código de integração.
 
-**Superfície mínima de dados** — os fluxos de verificação de idade são projetados para que dados de identidade sensíveis trafeguem diretamente entre o usuário e o provedor de identidade, sem passar pelo guardian-js.
+**Superfície mínima de dados**, os fluxos de verificação de idade são projetados para que dados de identidade sensíveis trafeguem diretamente entre o usuário e o provedor de identidade, sem passar pelo guardian-js.
 
 ---
 
@@ -92,7 +92,7 @@ import { MeuAdapterDeProvedor } from './adapters/MeuAdapterDeProvedor';
 
 const service = new AgeVerificationService(new MeuAdapterDeProvedor());
 
-// Passo 1 — iniciar a verificação
+// Passo 1, iniciar a verificação
 // Chame isso quando o usuário tentar acessar conteúdo com restrição de idade.
 const initResult = await service.initiateVerification({
   redirectUri: 'https://minhaplataforma.com.br/auth/callback',
@@ -110,7 +110,7 @@ redirect(initResult.data.redirectUrl);
 ```
 
 ```typescript
-// Passo 2 — processar o callback
+// Passo 2, processar o callback
 // Chame isso na rota para onde o provedor redireciona o usuário de volta.
 const callbackResult = await service.handleCallback({
   providerPayload: req.body // o payload bruto enviado pelo provedor
@@ -125,7 +125,7 @@ const { verified, ageGroup, method, providerRef } = callbackResult.data;
 // verified: boolean
 // ageGroup: 'child' | 'adolescent' | 'adult' | null
 // method: 'document' | 'gov_id' | 'biometric' | 'third_party'
-// providerRef: string | null — referência opaca do provedor, para uso em auditoria
+// providerRef: string | null, referência opaca do provedor, para uso em auditoria
 
 // Sua plataforma decide o que fazer com o resultado.
 if (!verified || ageGroup !== 'adult') {
@@ -156,7 +156,7 @@ if (textResult.success) {
   const { riskLevel, categories, confidence } = textResult.data;
   // riskLevel: 'safe' | 'low' | 'medium' | 'high' | 'blocked'
   // categories: Array<'adult_content' | 'violence' | 'hate_speech' | 'gambling' | 'drugs' | 'self_harm' | 'safe'>
-  // confidence: number (0–1)
+  // confidence: number (0 a 1)
 
   if (riskLevel === 'blocked' || riskLevel === 'high') {
     // sua plataforma decide: rejeitar, sinalizar para revisão, etc.
@@ -289,7 +289,7 @@ const highRiskService = new ContentClassificationService(
 
 ### Trabalhando com o tipo Result
 
-Todos os métodos do guardian-js retornam um `Result<T>` — nunca lançam exceção. O padrão é consistente em todos os pacotes.
+Todos os métodos do guardian-js retornam um `Result<T>`, nunca lançam exceção. O padrão é consistente em todos os pacotes.
 
 ```typescript
 import type { Result } from '@guardian-js/core';
@@ -328,7 +328,7 @@ Isso é explícito e intencional:
 
 O ECA Digital (Lei 15.211/2025) exige que plataformas digitais implementem mecanismos confiáveis de verificação de idade, substituindo a autodeclaração por alternativas técnicas verificáveis. O guardian-js fornece a camada de integração padronizada para que desenvolvedores brasileiros possam implementar esses fluxos sem reinventar a roda.
 
-A fiscalização é de responsabilidade da ANPD (Autoridade Nacional de Proteção de Dados). O guardian-js não garante conformidade com a lei — a responsabilidade pela implementação correta e pelo cumprimento das obrigações legais é sempre da plataforma que utiliza a biblioteca.
+A fiscalização é de responsabilidade da ANPD (Autoridade Nacional de Proteção de Dados). O guardian-js não garante conformidade com a lei, a responsabilidade pela implementação correta e pelo cumprimento das obrigações legais é sempre da plataforma que utiliza a biblioteca.
 
 ---
 
@@ -350,4 +350,4 @@ O guardian-js é uma biblioteca de software fornecida no estado em que se encont
 
 ## Licença
 
-Apache License 2.0 — veja [LICENSE](LICENSE) para detalhes.
+Apache License 2.0, veja [LICENSE](LICENSE) para detalhes.

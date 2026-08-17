@@ -9,10 +9,10 @@
   </tr>
 </table>
 
-> Privacy-first, stateless toolkit for age verification and content classification — built for compliance with Brazil's Digital ECA (Law 15,211/2025) and beyond.
+> Privacy-first, stateless toolkit for age verification and content classification, built for compliance with Brazil's Digital ECA (Law 15,211/2025) and beyond.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pre--alpha-orange.svg)]()
+[![Status](https://img.shields.io/badge/status-pre.alpha-orange.svg)]()
 [![Languages](https://img.shields.io/badge/lang-TypeScript-blue.svg)]()
 
 ---
@@ -21,7 +21,7 @@
 
 **guardian-js** is an open-source TypeScript toolkit that helps digital platforms implement age verification and content classification in a standardized, privacy-preserving way.
 
-It is **not** a data storage service. It is **not** a government reporting system. It is a composable library that provides the plumbing — your platform owns the decisions and the compliance obligations.
+It is **not** a data storage service. It is **not** a government reporting system. It is a composable library that provides the plumbing, your platform owns the decisions and the compliance obligations.
 
 The library was created in direct response to Brazil's **ECA Digital (Lei 15.211/2025)**, the first Latin American law to impose enforceable age assurance requirements on digital platforms, which came into effect on **March 17, 2026**. However, the design is intentionally jurisdiction-agnostic and can be adapted to EU DSA requirements, UK Age Appropriate Design Code, and similar frameworks.
 
@@ -29,13 +29,13 @@ The library was created in direct response to Brazil's **ECA Digital (Lei 15.211
 
 ## Core principles
 
-**Stateless by design** — guardian-js processes inputs and returns outputs. It never stores personal data, never logs user identifiers, and never communicates with external services on your behalf without explicit configuration.
+**Stateless by design**, guardian-js processes inputs and returns outputs. It never stores personal data, never logs user identifiers, and never communicates with external services on your behalf without explicit configuration.
 
-**You own the compliance** — the library returns structured results. What your platform does with those results — blocking access, triggering a parental consent flow, logging for audit purposes — is entirely your responsibility. guardian-js is a tool, not a compliance service.
+**You own the compliance**, the library returns structured results. What your platform does with those results, blocking access, triggering a parental consent flow, logging for audit purposes, is entirely your responsibility. guardian-js is a tool, not a compliance service.
 
-**Adapter-based** — every external dependency (identity providers, content moderation APIs, ML runtimes) is behind an adapter interface. You choose your providers. You can swap them without changing your integration code.
+**Adapter-based**, every external dependency (identity providers, content moderation APIs, ML runtimes) is behind an adapter interface. You choose your providers. You can swap them without changing your integration code.
 
-**Minimal data surface** — age verification flows are designed so that sensitive identity data travels directly between the user and the identity provider, never passing through guardian-js.
+**Minimal data surface**, age verification flows are designed so that sensitive identity data travels directly between the user and the identity provider, never passing through guardian-js.
 
 ---
 
@@ -92,7 +92,7 @@ import { MyIdentityProviderAdapter } from './adapters/MyIdentityProviderAdapter'
 
 const service = new AgeVerificationService(new MyIdentityProviderAdapter());
 
-// Step 1 — initiate verification
+// Step 1, initiate verification
 // Call this when the user tries to access age-restricted content.
 const initResult = await service.initiateVerification({
   redirectUri: 'https://myplatform.com/auth/callback',
@@ -110,7 +110,7 @@ redirect(initResult.data.redirectUrl);
 ```
 
 ```typescript
-// Step 2 — handle the callback
+// Step 2, handle the callback
 // Call this on the route the provider redirects back to.
 const callbackResult = await service.handleCallback({
   providerPayload: req.body // the raw payload sent by the provider
@@ -125,7 +125,7 @@ const { verified, ageGroup, method, providerRef } = callbackResult.data;
 // verified: boolean
 // ageGroup: 'child' | 'adolescent' | 'adult' | null
 // method: 'document' | 'gov_id' | 'biometric' | 'third_party'
-// providerRef: string | null — opaque reference from the provider, for audit use
+// providerRef: string | null, opaque reference from the provider, for audit use
 
 // Your platform decides what to do with the result.
 if (!verified || ageGroup !== 'adult') {
@@ -156,7 +156,7 @@ if (textResult.success) {
   const { riskLevel, categories, confidence } = textResult.data;
   // riskLevel: 'safe' | 'low' | 'medium' | 'high' | 'blocked'
   // categories: Array<'adult_content' | 'violence' | 'hate_speech' | 'gambling' | 'drugs' | 'self_harm' | 'safe'>
-  // confidence: number (0–1)
+  // confidence: number (0 to 1)
 
   if (riskLevel === 'blocked' || riskLevel === 'high') {
     // your platform decides: reject, flag for review, etc.
@@ -289,7 +289,7 @@ const highRiskService = new ContentClassificationService(
 
 ### Working with the Result type
 
-Every method in guardian-js returns a `Result<T>` — it never throws. The pattern is consistent across all packages.
+Every method in guardian-js returns a `Result<T>`, it never throws. The pattern is consistent across all packages.
 
 ```typescript
 import type { Result } from '@guardian-js/core';
@@ -332,7 +332,7 @@ guardian-js is a software library provided as-is under the Apache 2.0 license. I
 
 ## Documentation
 
-- [pt-BR — Documentação em Português](LEIAME.md)
+- [pt-BR, Documentação em Português](LEIAME.md)
 - [Project Scope](SCOPE.md)
 - [Contributing](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
@@ -342,4 +342,4 @@ guardian-js is a software library provided as-is under the Apache 2.0 license. I
 
 ## License
 
-Apache License 2.0 — see [LICENSE](LICENSE) for details.
+Apache License 2.0, see [LICENSE](LICENSE) for details.
