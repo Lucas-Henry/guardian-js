@@ -12,7 +12,7 @@
 > Toolkit stateless e privacy-first para verificação de idade e classificação de conteúdo, construído para conformidade com o ECA Digital brasileiro (Lei 15.211/2025) e além.
 
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-Apache%202.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pr%C3%A9.alpha-orange.svg)]()
+[![Status](https://img.shields.io/badge/status-pr%C3%A9--alpha-orange.svg)]()
 [![Linguagem](https://img.shields.io/badge/lang-TypeScript-blue.svg)]()
 
 ---

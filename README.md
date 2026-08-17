@@ -12,7 +12,7 @@
 > Privacy-first, stateless toolkit for age verification and content classification, built for compliance with Brazil's Digital ECA (Law 15,211/2025) and beyond.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-pre.alpha-orange.svg)]()
+[![Status](https://img.shields.io/badge/status-pre--alpha-orange.svg)]()
 [![Languages](https://img.shields.io/badge/lang-TypeScript-blue.svg)]()
 
 ---
